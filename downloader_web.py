@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
-
+import os
 import requests
 from selenium import webdriver
 from time import sleep
 profile=webdriver.FirefoxProfile()
-profile.set_preference('browser.download.dir', '/Users/jiangyu/Desktop/tianchi/downloads/')
+path=os.path.join(os.getcwd(),'downloads')
+print(path)
+profile.set_preference('browser.download.dir', path)
 profile.set_preference('browser.download.manager.showWhenStarting', False)
 profile.set_preference('browser.download.folderList', 2)
 profile.set_preference('browser.helperApps.neverAsk.saveToDisk', 'application/zip')
